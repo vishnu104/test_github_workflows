@@ -1,0 +1,23 @@
+# This is a basic workflow to help you get started with Actions
+name: Deploy Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Select environment"
+        required: true
+        default: "dev"
+        type: choice
+        options:
+          - dev
+          - test
+          - prod
+      run_tests:
+        description: "Run tests before deploy?"
+        required: true
+        default: "yes"
+        type: choice
+        options:
+          - yes
+          - no          
